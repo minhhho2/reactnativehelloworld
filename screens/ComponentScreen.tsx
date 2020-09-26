@@ -1,14 +1,19 @@
 import React, {Component} from "react";
-import {TextInput, View} from "react-native";
+import {ActivityIndicator, TextInput, View} from "react-native";
+import AlertComponent from "../components/alert/AlertComponent";
 
-export class ComponentScreen extends Component {
+const ComponentScreen = () => {
 
-	render() {
-		return (
-
+	return (
 		<View>
-			<TextInput>sadf</TextInput>
+			<View>
+				<ActivityIndicator animating={true} />
+			</View>
+			<AlertComponent text={'Example error message'} type={'error'} />
+			<AlertComponent text={'Example success message'} type={'success'} />
+			<AlertComponent text={'Example info message'} type={'info'} />
+			<AlertComponent text={'Example warning message'} type={'warning'} />
 		</View>
-		)
-	}
+	)
 }
+export default ComponentScreen;
