@@ -3,6 +3,7 @@ import {StyleSheet, Text, TextInput, TextInputChangeEventData, View, ViewStyle} 
 import React, {useEffect, useState} from "react";
 import {Button, Input, Text as RmeText} from "react-native-elements";
 import {BrandOrange, BrandWhite} from "../styles/color-variables";
+import AlertComponent from "../components/alert/AlertComponent";
 
 type loginForm = {
 	username: string;
@@ -53,6 +54,8 @@ export function LoginScreen() {
 
 			<View style={styles.loginForm}>
 				<RmeText h1 h1Style={{margin: 'auto', fontStyle: 'italic', fontWeight: '900', color: BrandOrange}}>neds</RmeText>
+
+				<AlertComponent text={'swag'} type={'error'} />
 
 				<Input placeholder='Username'
 				       errorMessage={loginForm.usernameError}
