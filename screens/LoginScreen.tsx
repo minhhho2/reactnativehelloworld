@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import {Button, Input, Text as RmeText} from "react-native-elements";
 import {BrandOrange, BrandWhite} from "../styles/color-variables";
 import AlertComponent from "../components/alert/AlertComponent";
+import moment from "moment";
 
 type loginForm = {
 	username: string;
@@ -46,7 +47,6 @@ export function LoginScreen() {
 	useEffect(() => {
 		console.log(`login screen useEffect executed`)
 	}, [loginForm]);
-
 
 	return (
 		<View style={styles.loginScreen}>

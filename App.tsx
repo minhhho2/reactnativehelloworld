@@ -4,7 +4,6 @@ import {LoginScreen} from "./screens/LoginScreen";
 
 export default function App() {
 	console.log(`ScreenDimensions ${JSON.stringify(Dimensions.get('window'))}`);
-
 	return (
 		<View style={styles.container}>
 			<Text>Open up App.tsx to start working on your app!</Text>
