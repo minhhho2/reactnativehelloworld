@@ -1,8 +1,8 @@
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {StyleSheet, TextInput, TextInputChangeEventData, View} from "react-native";
+import {StyleSheet, Text, TextInput, TextInputChangeEventData, View, ViewStyle} from "react-native";
 import React, {useEffect, useState} from "react";
 import {Button, Input} from "react-native-elements";
-import {BrandWhite} from "../styles/color-variables";
+import {BrandOrange, BrandWhite} from "../styles/color-variables";
 
 type loginForm = {
 	username: string;
@@ -54,32 +54,69 @@ export function LoginScreen() {
 
 				<Input placeholder='Username'
 				       errorMessage={loginForm.usernameError}
-				       rightIcon={{ type: 'font-awesome', name: 'bug'}}
+				       rightIcon={{type: 'font-awesome', name: 'facebook'}}
 				       onChangeText={text => onChangeLoginForm('username', text)}
 				       textContentType='username'
 				/>
+
 				<Input placeholder='Password'
 				       errorMessage={loginForm.passwordError}
-				       rightIcon={{ type: 'font-awesome', name: 'lock'}}
+				       rightIcon={{type: 'font-awesome', name: 'lock'}}
 				       onChangeText={text => onChangeLoginForm('password', text)}
 				       textContentType='password'
 				/>
 
-				<Button title='Login' onPress={onClickLogin}/>
+				<Button buttonStyle={loginButton}
+				        title='Log in'
+				        onPress={onClickLogin}/>
+
+
+			</View>
+
+			<View style={styles.signupContent}>
+
+				<Text style={styles.signupLabel}>TAKE IT TO THE NEDS LEVEL</Text>
+
+				<Button
+					containerStyle={joinNowContainer}
+					buttonStyle={joinNowButton}
+					title='Join Now'/>
 			</View>
 		</View>
 	)
 }
 
+const loginButton = {
+	backgroundColor: BrandOrange
+}
+
+const joinNowContainer = {
+	width: '60%',
+}
+const joinNowButton = {
+	backgroundColor: BrandOrange,
+	borderWidth: 1,
+	borderColor: BrandWhite,
+}
+
 const styles = StyleSheet.create({
 	loginScreen: {
 		width: '100%',
-		backgroundColor: 'orange'
+		backgroundColor: BrandOrange,
 	},
 	loginForm: {
 		backgroundColor: BrandWhite,
-		borderWidth: 1,
 		borderRadius: 10,
-		padding: 15
-	}
+		padding: 30
+	},
+	signupContent: {
+		width: '100%',
+		paddingVertical: 20,
+		alignItems: 'center'
+	},
+	signupLabel: {
+		paddingBottom: 10,
+		fontStyle: 'italic',
+		color: BrandWhite,
+	},
 });
