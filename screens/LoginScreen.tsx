@@ -1,7 +1,7 @@
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {StyleSheet, Text, TextInput, TextInputChangeEventData, View, ViewStyle} from "react-native";
 import React, {useEffect, useState} from "react";
-import {Button, Input} from "react-native-elements";
+import {Button, Input, Text as RmeText} from "react-native-elements";
 import {BrandOrange, BrandWhite} from "../styles/color-variables";
 
 type loginForm = {
@@ -50,7 +50,9 @@ export function LoginScreen() {
 	return (
 		<View style={styles.loginScreen}>
 
+
 			<View style={styles.loginForm}>
+				<RmeText h1 h1Style={{margin: 'auto', fontStyle: 'italic', fontWeight: '900', color: BrandOrange}}>neds</RmeText>
 
 				<Input placeholder='Username'
 				       errorMessage={loginForm.usernameError}
@@ -69,8 +71,6 @@ export function LoginScreen() {
 				<Button buttonStyle={loginButton}
 				        title='Log in'
 				        onPress={onClickLogin}/>
-
-
 			</View>
 
 			<View style={styles.signupContent}>
