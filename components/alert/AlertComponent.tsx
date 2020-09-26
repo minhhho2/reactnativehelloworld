@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Text, View, ViewStyle} from "react-native";
-import {SupportBlue, SupportGreen, SupportOrange, SupportRed} from "../../styles/color-variables";
+import {BrandWhite, SupportBlue, SupportGreen, SupportOrange, SupportRed} from "../../styles/color-variables";
 import {Icon, Input} from "react-native-elements";
 
 type AlertType = 'success' | 'error' | 'info' | 'warning';
@@ -36,13 +36,18 @@ export default function AlertComponent(props: AlertComponentProps) {
 		backgroundColor: mapTypeToBackgroundColor(props.type ?? 'info'),
 		padding: 10,
 		alignItems: "center",
-		borderRadius: 5
+		borderRadius: 5,
+		margin: 1
 	};
 
 	return (
 		<View style={style}>
-			<Icon color={'red'} style={{paddingRight: 15}} type='font-awesome' name={'exclamation-triangle'}/>
-			<Text style={{}}>{props.text}</Text>
+			<Icon color={'red'}
+			      style={{paddingRight: 15}}
+			      type='font-awesome'
+			      name={mapTypeToIcon[props.type ?? 'info']}/>
+
+			<Text style={{color: BrandWhite}}>{props.text}</Text>
 		</View>
 	);
 }

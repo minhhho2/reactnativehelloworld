@@ -55,7 +55,10 @@ export function LoginScreen() {
 			<View style={styles.loginForm}>
 				<RmeText h1 h1Style={{margin: 'auto', fontStyle: 'italic', fontWeight: '900', color: BrandOrange}}>neds</RmeText>
 
-				<AlertComponent text={'swag'} type={'error'} />
+				<AlertComponent text={'Example error message'} type={'error'} />
+				<AlertComponent text={'Example success message'} type={'success'} />
+				<AlertComponent text={'Example info message'} type={'info'} />
+				<AlertComponent text={'Example warning message'} type={'warning'} />
 
 				<Input placeholder='Username'
 				       errorMessage={loginForm.usernameError}
