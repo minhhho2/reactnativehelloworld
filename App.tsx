@@ -1,8 +1,10 @@
 import React from 'react';
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "react-native-screens/native-stack";
 import LoginScreen from "./screens/LoginScreen";
+import ComponentScreen from "./screens/ComponentScreen";
+import DoubleSwiperScreen from "./screens/DoubleSwiperScreen";
 
 
 const Root = createNativeStackNavigator()
@@ -12,10 +14,13 @@ export default function App() {
 	return (
 
 		<View style={styles.container}>
-			<Text>Open up App.tsx to start working on your app!</Text>
-			<LoginScreen/>
+			<ScrollView style={{width: '100%'}}>
+				<Text>Open up App.tsx to start working on your app!</Text>
+				<LoginScreen/>
+				<ComponentScreen/>
+				<DoubleSwiperScreen/>
+			</ScrollView>
 		</View>
-
 
 
 	);
