@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {Text, View, ViewStyle} from "react-native";
 import {SupportBlue, SupportGreen, SupportOrange, SupportRed} from "../../styles/color-variables";
 import {Icon, Input} from "react-native-elements";
 
@@ -7,22 +7,33 @@ type AlertType = 'success' | 'error' | 'info' | 'warning';
 
 type AlertComponentProps = {
 	text: string,
-	type: AlertType
+	type?: AlertType
+	style?: ViewStyle
 }
 
-const typeToBackgroundColor = {
-	success: SupportGreen,
-	error: SupportRed,
-	warning: SupportOrange,
-	info: SupportBlue
+const mapTypeToBackgroundColor = (type: AlertType): string => {
+	let types = {
+		success: SupportGreen,
+		error: SupportRed,
+		warning: SupportOrange,
+		info: SupportBlue
+	}
+	return types[type];
+}
+
+// TODO: NOT FINISHED - THESE SHOULD BE WM SVG'S
+const mapTypeToIcon = {
+	success: 'info-circle',
+	error: 'exclamation-triangle',
+	warning: 'exclamation-triangle',
+	info: 'info-circle'
 }
 
 export default function AlertComponent(props: AlertComponentProps) {
 
-	// TODO: Add prop to override default alert component style
-	const style = {
+	const style = props.style ?? {
 		flexDirection: 'row',
-		backgroundColor: typeToBackgroundColor[props.type],
+		backgroundColor: mapTypeToBackgroundColor(props.type ?? 'info'),
 		padding: 10,
 		alignItems: "center",
 		borderRadius: 5
@@ -30,7 +41,7 @@ export default function AlertComponent(props: AlertComponentProps) {
 
 	return (
 		<View style={style}>
-			<Icon style={{paddingRight: 15}} name={'facebook'}/>
+			<Icon color={'red'} style={{paddingRight: 15}} type='font-awesome' name={'exclamation-triangle'}/>
 			<Text style={{}}>{props.text}</Text>
 		</View>
 	);

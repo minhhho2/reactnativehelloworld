@@ -4,7 +4,8 @@ export const BrandWhite = '#FFFFFF';
 export const BrandOrange = '#DE781F'
 
 // Support Colors
-export const SupportRed = '#e00a19';
-export  const SupportGreen = '#38CC7D';
-export const SupportBlue = '#009FDD';
-export const SupportOrange = '#F27600';
+export const SupportRed = '#ff8080';
+export  const SupportGreen = '#bfff80';
+export const SupportBlue = '#80bfff';
+export const SupportOrange = '#ffbf80';
+
