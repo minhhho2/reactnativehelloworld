@@ -8,6 +8,7 @@ type AlertType = 'success' | 'error' | 'info' | 'warning';
 type AlertComponentProps = {
 	text: string,
 	type?: AlertType
+	// TODO: Break these down into individual optional props
 	style?: ViewStyle
 }
 
@@ -37,7 +38,7 @@ export default function AlertComponent(props: AlertComponentProps) {
 		padding: 10,
 		alignItems: "center",
 		borderRadius: 5,
-		margin: 1
+		margin: 1,
 	};
 
 	return (
